@@ -1,2 +1,16 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<h2>Post a new secret!</h2>
+<div class='container'>
+  <form action='/' method='post' class='form-group'>
+  <input type='text' name='secret' placeholder='Tell us a secret.'>
+  <input type='submit' value='Send' class='btn btn-primary'>
+  </form>
+</div>
+
+<div class='container'>
+  {{#each secretArray as |secret|}}
+  <div class='row'>
+    
+  </div>
+  </div>
