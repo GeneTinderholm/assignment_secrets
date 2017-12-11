@@ -9,10 +9,12 @@ router.get("/", (req, res) => {
 });
 router.post("/", async (req, res) => {
   let username = req.body.username;
+  console.log(username);
   let user = await User.find({
     username: username
   });
   user = user[0];
+  console.log(user);
   res.session = req.session || {};
   res.session.loggedIn = user.validatePassword(req.body.password);
   res.session.userId = user.id;

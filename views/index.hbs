@@ -10,7 +10,26 @@
 
 <div class='container'>
   {{#each secretArray as |secret|}}
-  <div class='row'>
-    
-  </div>
-  </div>
+    <div class='row'>
+      <p> {{secret.body}} </p> 
+      {{#each secret.usersRequesting as |user|}}
+        <p> user.username </p>
+      {{/each}}
+    </div>
+  {{/each}}
+</div>
+
+<div class='container'>
+  {{#each secretArray as |secret|}}
+    <div class='row'>
+      <p> {{secret.body}} </p> 
+      <p> {{secret.userSubmitted}} </p>
+    </div>
+  {{/each}}
+</div>
+
+
+
+
+
+
