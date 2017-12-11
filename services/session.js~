@@ -11,7 +11,7 @@ const generateSignature = email => md5(email + SECRET);
 const User = require("../models/user");
 
 const loginMiddleware = (req, res, next) => {
-  req.cookies = req.cookies || {};
+  let req.cookies = req.cookies || {};
   const sessionId = req.cookies.sessionId;
   if (!sessionId) return next();
 
@@ -28,4 +28,5 @@ const loginMiddleware = (req, res, next) => {
   });
 };
 
-module.exports = loginMiddleware;
+
+module.exports = loginMiddleware();
