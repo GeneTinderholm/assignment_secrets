@@ -13,7 +13,10 @@ var UserSchema = new Schema(
       unique: true
     },
     email: String,
-    passwordHash: { type: String, required: true },
+    passwordHash: { 
+      type: String, 
+      required: true 
+    },
     secrets: [
       {
         type: Schema.Types.ObjectId,

@@ -10,6 +10,12 @@ var SecretSchema = new Schema(
         ref: "User"
       }
     ],
+    accessUsers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ],
     userSubmitted: Schema.Types.ObjectId
   },
   {
