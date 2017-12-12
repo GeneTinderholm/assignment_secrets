@@ -18,4 +18,16 @@ router.get("/", async (req, res, next) => {
   console.log(secretArray);
   res.render("index", { secretArray });
 });
+
+router.post("/", async (req, res, next) => {
+  let secret = req.body.secret || "";
+  let userId = req.session.userId;
+  let user = await User.findById(userId);
+  let secretObj = new Secret({ body: secret, userSubmitted: userId });
+  console.log(secret, userId, user, secretObj);
+  user.secrets.push(secretObj._id);
+  await secretObj.save();
+  await User.findByIdAndUpdate(user.id, user);
+  res.redirect("/");
+});
 module.exports = router;
